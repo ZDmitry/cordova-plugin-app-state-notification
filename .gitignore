@@ -1,0 +1,12 @@
+logs/*
+!.gitkeep
+node_modules/
+tmp
+.idea
+.DS_Store
+npm-debug
+.c9revisions/
+*~
+.settings
+*sublime*
+

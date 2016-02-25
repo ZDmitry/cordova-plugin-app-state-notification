@@ -1,0 +1,16 @@
+{
+  "name": "cordova-plugin-app-state-notification",
+  "version": "0.1.0",
+  "description": "Cordova application state notification plugin",
+  "cordova": {
+    "id": "cordova-plugin-app-state-notification",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zdmitry/cordova-plugin-app-state-notification"
+  },
+  "license": "Apache-2.0"
+}

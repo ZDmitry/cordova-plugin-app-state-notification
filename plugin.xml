@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
+    id="cordova-plugin-app-state-notification"
+    version="0.1.0">
+    
+    <name>ApplicationStateNotificationPlugin</name>
+    
+    <engines>
+        <engine name="cordova" version=">=3.4.0"/>
+    </engines>
+    
+    <platform name="ios">
+        <js-module src="www/app-state-notification.js" name="ApplicationStateNotification">
+            <clobbers target="cordova.plugins.ApplicationStateNotification" />
+        </js-module>
+        
+        <config-file target="config.xml" parent="/*">
+            <feature name="ApplicationStateNotification">
+                <param name="ios-package" value="CDVApplicationStateNotificationPlugin" />
+            </feature>
+        </config-file>
+        
+        <header-file src="src/ios/CDVApplicationStateNotificationPlugin.h" />
+        <source-file src="src/ios/CDVApplicationStateNotificationPlugin.m" />
+    </platform>
+    
+</plugin>
