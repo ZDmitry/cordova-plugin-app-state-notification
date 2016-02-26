@@ -8,12 +8,13 @@
     <engines>
         <engine name="cordova" version=">=3.4.0"/>
     </engines>
+
+    <js-module src="www/app-state-notification.js" name="ApplicationStateNotification">
+        <clobbers target="cordova.plugins.ApplicationStateNotification" />
+    </js-module>
+
     
-    <platform name="ios">
-        <js-module src="www/app-state-notification.js" name="ApplicationStateNotification">
-            <clobbers target="cordova.plugins.ApplicationStateNotification" />
-        </js-module>
-        
+    <platform name="ios">        
         <config-file target="config.xml" parent="/*">
             <feature name="ApplicationStateNotification">
                 <param name="ios-package" value="CDVApplicationStateNotificationPlugin" />
@@ -22,6 +23,16 @@
         
         <header-file src="src/ios/CDVApplicationStateNotificationPlugin.h" />
         <source-file src="src/ios/CDVApplicationStateNotificationPlugin.m" />
+    </platform>
+
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="ApplicationStateNotification" >
+                <param name="android-package" value="com.cordova.zdmitry.appstatenotification.ApplicationStateNotificationPlugin"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/ApplicationStateNotificationPlugin.java" target-dir="src/com/cordova/zdmitry/appstatenotification" />
     </platform>
     
 </plugin>
