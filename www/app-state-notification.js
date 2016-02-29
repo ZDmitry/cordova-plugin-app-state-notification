@@ -8,7 +8,7 @@ function PluginObject() {
         function success(msg) {
             if (listener) {
                 if ( msg && msg.event === 'init' && typeof listener.onInit === 'function' ) {
-                    listener.onInit();
+                    listener.onInit({success: true});
                 } 
                 if ( msg && msg.event === 'stateChange' && typeof listener.onStateChanged === 'function' ) {
                     listener.onStateChanged(msg.reason);

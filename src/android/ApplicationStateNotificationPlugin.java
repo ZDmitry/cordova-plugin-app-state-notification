@@ -18,7 +18,7 @@ import org.json.JSONObject;
 
 
 public class ApplicationStateNotificationPlugin extends CordovaPlugin {
-    static String TAG = "myapp";
+    static String TAG = "ApplicationStateNotificationPlugin";
 
     private Handler  mHandler;
     private Runnable mStatusChecker;
@@ -42,11 +42,11 @@ public class ApplicationStateNotificationPlugin extends CordovaPlugin {
                     JSONObject obj = new JSONObject();
                     obj.put("event", "stateChange");
                     if (isLocked) {
-                        obj.put("reason", "locked");
-                        Log.v(TAG, "locked");
+                        obj.put("reason", "lock");
+                        // Log.v(TAG, "lock");
                     } else {
                         obj.put("reason", "home");
-                        Log.v(TAG, "home");
+                        // Log.v(TAG, "home");
                     }
 
                     if (m_cbContext != null) {
