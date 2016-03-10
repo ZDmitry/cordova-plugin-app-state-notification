@@ -33,7 +33,6 @@ public class ApplicationStateNotificationPlugin extends CordovaPlugin {
     @Override
     public void onPause(boolean m) {
         super.onPause(m);
-        isLocked = false;
 
         mStatusChecker = new Runnable() {
             @Override
@@ -61,13 +60,14 @@ public class ApplicationStateNotificationPlugin extends CordovaPlugin {
         };
 
         mHandler = new Handler();
-        mHandler.postDelayed(mStatusChecker, 1000 * 10); // 10 seconds
+        mHandler.postDelayed(mStatusChecker, 1000 * 5); // 5 seconds
     }
 
     @Override
     public void onResume(boolean m) {
         super.onResume(m);
 
+        isLocked = false;
         if (mHandler != null) {
             mHandler.removeCallbacks(mStatusChecker);
             mStatusChecker = null;
